@@ -1,0 +1,79 @@
+{
+    // "build_systems":
+    // [
+    //     {
+    //         "cmd":
+    //         [
+    //             "cmake",
+    //             "-DCMAKE_BUILD_TYPE=Debug",
+    //             ".."
+    //         ],
+    //         "name": "CMake",
+    //         "variants":
+    //         [
+    //             {
+    //                 "cmd": "make",
+    //                 "name": "Make"
+    //             },
+    //             {
+    //                 "cmd":
+    //                 [
+    //                     "optirun",
+    //                     "./$project_base_name"
+    //                 ],
+    //                 "name": "Run"
+    //             }
+    //         ],
+    //         "working_dir": "$project_path/build"
+    //     }
+    // ],
+    "folders":
+    [
+        {
+            "file_exclude_patterns":
+            [
+                "*.sublime-workspace",
+                "*.sln",
+                "*.opensdf",
+                "*.vcxproj*",
+                ".gitmodules",
+                ".git"
+            ],
+            "folder_exclude_patterns":
+            [
+                ".git",
+                "build"
+            ],
+            "follow_symlinks": true,
+            "path": "."
+        }
+    ],
+    "settings":
+    {
+        "sublimeclang_additional_language_options":
+        {
+            "c++":
+            [
+                "-std=c++11"
+            ]
+        },
+        "sublimeclang_debug_options": true,
+        "sublimeclang_dont_prepend_clang_includes": false,
+        "sublimeclang_options":
+        [
+            // "-Wno-deprecated-declarations",
+            "-I${project_path}/GameEngine/src/",
+            "-I${project_path}/GameEngine/src/**",
+            "-I${project_path}/src/",
+            "-I${project_path}/src/**",
+            "-isystem",
+            "/usr/include",
+            "-isystem",
+            "/usr/include/c++/*",
+            "-Wall",
+            "-ferror-limit=0"
+        ],
+        "sublimegdb_commandline": "optirun gdb --interpreter=mi build/snowglobe",
+        "sublimegdb_workingdir": "$project_path"
+    }
+}
