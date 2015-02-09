@@ -73,7 +73,7 @@
             "-Wall",
             "-ferror-limit=0"
         ],
-        "sublimegdb_commandline": "optirun gdb --interpreter=mi build/snowglobe",
-        "sublimegdb_workingdir": "$project_path"
+        "sublimegdb_commandline": "optirun gdb --interpreter=mi ./snowglobe",
+        "sublimegdb_workingdir": "${folder:${project_path:snowglobe.sublime-project}}/build",
     }
 }
