@@ -62,10 +62,10 @@
         "sublimeclang_options":
         [
             // "-Wno-deprecated-declarations",
-            "-I${project_path}/GameEngine/src/",
-            "-I${project_path}/GameEngine/src/**",
-            "-I${project_path}/src/",
+            "-I${project_path}/GameEngine/**",
             "-I${project_path}/src/**",
+            "-I${project_path}/build/shaders",
+            // "-I${project_path}/build/**",
             "-isystem",
             "/usr/include",
             "-isystem",
