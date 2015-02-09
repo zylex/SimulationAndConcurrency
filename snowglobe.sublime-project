@@ -57,7 +57,7 @@
                 "-std=c++11"
             ]
         },
-        "sublimeclang_debug_options": true,
+        "sublimeclang_debug_options": false,
         "sublimeclang_dont_prepend_clang_includes": false,
         "sublimeclang_options":
         [
