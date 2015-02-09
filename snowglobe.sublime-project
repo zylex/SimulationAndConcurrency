@@ -61,15 +61,15 @@
         "sublimeclang_dont_prepend_clang_includes": false,
         "sublimeclang_options":
         [
-            // "-Wno-deprecated-declarations",
-            "-I${project_path}/GameEngine/**",
-            "-I${project_path}/src/**",
-            "-I${project_path}/build/shaders",
-            // "-I${project_path}/build/**",
+            "-Wno-deprecated-declarations",
             "-isystem",
             "/usr/include",
             "-isystem",
             "/usr/include/c++/*",
+            "-I${project_path}/GameEngine/**",
+            "-I${project_path}/src/**",
+            "-I${project_path}/build/shaders",
+            // "-I${project_path}/build/**",
             "-Wall",
             "-ferror-limit=0"
         ],
