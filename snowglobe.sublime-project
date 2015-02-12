@@ -1,32 +1,43 @@
 {
-    // "build_systems":
-    // [
-    //     {
-    //         "cmd":
-    //         [
-    //             "cmake",
-    //             "-DCMAKE_BUILD_TYPE=Debug",
-    //             ".."
-    //         ],
-    //         "name": "CMake",
-    //         "variants":
-    //         [
-    //             {
-    //                 "cmd": "make",
-    //                 "name": "Make"
-    //             },
-    //             {
-    //                 "cmd":
-    //                 [
-    //                     "optirun",
-    //                     "./$project_base_name"
-    //                 ],
-    //                 "name": "Run"
-    //             }
-    //         ],
-    //         "working_dir": "$project_path/build"
-    //     }
-    // ],
+    "build_systems":
+    [
+        {
+            "cmd":
+            [
+                "zsh",
+                "-c",
+                "rm -rf build && mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug "
+            ],
+            "name": "Snowglobe Linux",
+            "variants":
+            [
+                {
+                    "cmd": "make",
+                    "name": "Make",
+                    "working_dir": "$project_path/build"
+                },
+                {
+                    "cmd":
+                    [
+                        "optirun",
+                        "./$project_base_name"
+                    ],
+                    "working_dir": "$project_path/build",
+                    "name": "Run"
+                },
+                {
+                    "cmd":
+                    [
+                        "primusrun",
+                        "vogleditor64",
+                        "$project_path/build/$project_base_name.vogltrace.bin"
+                    ],
+                    "name": "VOGL"
+                }
+            ],
+            "working_dir": "$project_path"
+        }
+    ],
     "folders":
     [
         {
@@ -73,7 +84,7 @@
             "-Wall",
             "-ferror-limit=0"
         ],
-        "sublimegdb_commandline": "optirun gdb --interpreter=mi ./snowglobe",
+        "sublimegdb_commandline": "VOGL_CMD_LINE='--vogl_tracefile snowglobe.vogltrace.bin --vogl_debug --vogl_pause' LD_PRELOAD=$(readlink -f /opt/vogl/libvogltrace64.so) optirun gdb --interpreter=mi ./snowglobe",
         "sublimegdb_workingdir": "${folder:${project_path:snowglobe.sublime-project}}/build",
     }
 }
