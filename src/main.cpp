@@ -1,7 +1,8 @@
 #include "Game.h"
 
-int main(int argc, char const* argv[]) {
+int main(int argc, char const* argv[])
+{
 
-  zge::Game game;
+  zge::Game game("");
   return game.run();
 }

@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.1.2)
-project (snowglobe CXX)
+project (snowglobe)
 
 SET(CMAKE_CXX_FLAGS "-std=c++11")
 
@@ -14,6 +14,8 @@ foreach (headerFile ${${PROJECT_NAME}_HEADERS})
     list (APPEND ${PROJECT_NAME}_INCLUDE_DIRS ${dir})
 endforeach()
 list(REMOVE_DUPLICATES ${PROJECT_NAME}_INCLUDE_DIRS)
+
+list(APPEND ${PROJECT_NAME}_SOURCES ${${PROJECT_NAME}_HEADERS})
 
 include_directories(${${PROJECT_NAME}_INCLUDE_DIRS})
 add_executable (${PROJECT_NAME} ${${PROJECT_NAME}_SOURCES})

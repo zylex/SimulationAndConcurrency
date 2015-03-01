@@ -6,7 +6,7 @@
             [
                 "zsh",
                 "-c",
-                "rm -rf build && mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug "
+                "rm -rf build && mkdir build && cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug"
             ],
             "name": "Snowglobe Linux",
             "variants":
@@ -28,11 +28,19 @@
                 {
                     "cmd":
                     [
-                        "primusrun",
+                        "optirun",
                         "vogleditor64",
                         "$project_path/build/$project_base_name.vogltrace.bin"
                     ],
                     "name": "VOGL"
+                },
+                {
+                    "cmd":
+                    [
+                        "ctest"
+                    ],
+                    "working_dir": "$project_path/build/GameEngine/test",
+                    "name": "Test"
                 }
             ],
             "working_dir": "$project_path"
@@ -80,11 +88,13 @@
             "-I${project_path}/GameEngine/**",
             "-I${project_path}/src/**",
             "-I${project_path}/build/shaders",
-            // "-I${project_path}/build/**",
             "-Wall",
+            "-DOPEN_GL",
             "-ferror-limit=0"
         ],
-        "sublimegdb_commandline": "VOGL_CMD_LINE='--vogl_tracefile snowglobe.vogltrace.bin --vogl_debug --vogl_pause' LD_PRELOAD=$(readlink -f /opt/vogl/libvogltrace64.so) optirun gdb --interpreter=mi ./snowglobe",
-        "sublimegdb_workingdir": "${folder:${project_path:snowglobe.sublime-project}}/build",
+        //"sublimegdb_commandline": "TRACE_FILE=snowglobe.api.trace VOGL_CMD_LINE='--vogl_tracefile snowglobe.vogltrace.bin --vogl_debug --vogl_pause' LD_PRELOAD=$(readlink -f /opt/vogl/libvogltrace64.so):/usr/lib/apitrace/wrappers/glxtrace.so optirun gdb --interpreter=mi ./snowglobe",
+        "sublimegdb_commandline": "gdb --interpreter=mi gameengine_test",
+        //"sublimegdb_workingdir": "${folder:${project_path:snowglobe.sublime-project}}/build",
+        "sublimegdb_workingdir": "${folder:${project_path:snowglobe.sublime-project}}/build/GameEngine/test",
     }
 }
