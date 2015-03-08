@@ -3,6 +3,6 @@
 int main(int argc, char const* argv[])
 {
 
-  zge::Game game("");
+  zge::Game game("Snow Globe Demo");
   return game.run();
 }

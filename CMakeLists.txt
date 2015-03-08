@@ -1,4 +1,5 @@
-cmake_minimum_required (VERSION 3.1.2)
+#cmake_minimum_required (VERSION 3.1.2)
+cmake_minimum_required (VERSION 2.8.8)
 project (snowglobe)
 
 SET(CMAKE_CXX_FLAGS "-std=c++11")
