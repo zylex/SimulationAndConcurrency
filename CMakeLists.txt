@@ -2,7 +2,18 @@
 cmake_minimum_required (VERSION 2.8.8)
 project (snowglobe)
 
-SET(CMAKE_CXX_FLAGS "-std=c++11")
+SET(CMAKE_CXX_FLAGS "")
+
+IF(MINGW)
+    list(APPEND CMAKE_CXX_FLAGS "-std=c++11")
+    add_definitions(-DOPEN_GL)
+ELSEIF(WIN32)
+    add_definitions(-DDIRECT_X)
+    list(APPEND CMAKE_CXX_FLAGS "/EHsc")
+ELSE()
+    list(APPEND CMAKE_CXX_FLAGS "-std=c++11")
+    add_definitions(-DOPEN_GL)
+ENDIF()
 
 add_subdirectory(GameEngine)
 
