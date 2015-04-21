@@ -88,6 +88,8 @@
         "sublimeclang_options":
         [
             "-Wno-deprecated-declarations",
+            // "-fms-extensions",
+            // "-fms-compatibility",
             "-isystem",
             "/usr/include",
             "-isystem",
@@ -114,6 +116,7 @@
                 "FIXME": "FIX ?ME[\\s]*?:[\\s]*(?P<fixme>.*)$",
                 "TODO": "TODO[\\s]*?:[\\s]*(?P<todo>.*)$",
                 "MAYBE": "MAYBE[\\s]*?:[\\s]*(?P<maybe>.*)$",
+                "LATER": "LATER[\\s]*?:[\\s]*(?P<later>.*)$",
                 "NOTE": "NOTE[\\s]*?:[\\s]*(?P<note>.*)$",
             },
             "patterns_weight":
@@ -121,7 +124,8 @@
                 "FIXME": 10,
                 "TODO": 20,
                 "MAYBE": 30,
-                "NOTE": 40
+                "LATER": 40,
+                "NOTE": 50,
             },
             "exclude_folders":
             [
