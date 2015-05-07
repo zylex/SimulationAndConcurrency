@@ -1,13 +1,13 @@
 #include "IGame.h"
 
 #include "GameStates.h"
-#include "GlobeScene.h"
+#include "BallScene.h"
 
 int main(int argc, char const* argv[])
 {
   zge::IGame* game = zge::IGame::getInstance();
-  game->setWindowTitle("Snow Globe Demo");
-  game->addGameState(GameStates::GLOBE_SCENE, new GlobeScene);
-  game->setNextState(GameStates::GLOBE_SCENE);
+  game->setWindowTitle("08964: Simulation and Concurrency");
+  game->addGameState(GameStates::BALL_SCENE, new BallScene);
+  game->setNextState(GameStates::BALL_SCENE);
   return game->run();
 }

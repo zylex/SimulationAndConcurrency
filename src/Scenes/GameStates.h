@@ -1,9 +1,10 @@
 #ifndef GAME_STATES_H
 #define GAME_STATES_H
 
-enum GameStates {
+enum GameStates
+{
   STATE_NULL,
-  GLOBE_SCENE,
+  BALL_SCENE,
 
   TOTAL_STATES
 };
