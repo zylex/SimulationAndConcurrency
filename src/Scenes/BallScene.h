@@ -10,14 +10,18 @@
 #include "GameState.h"
 #include "Event.h"
 #include "MeshObject.h"
+#include "Light.h"
 
 class BallScene : public zge::GameState
 {
 private:
   std::vector<glm::vec3> instancePositions;
-  // zge::MeshObject* squares[4];
+  zge::MeshObject* squares[4];
   zge::Camera* camera;
   zge::IGameObject* box;
+
+  zge::Light light;
+
 #ifdef USE_ANT
   BallSceneTweakBar* bar;
 #endif

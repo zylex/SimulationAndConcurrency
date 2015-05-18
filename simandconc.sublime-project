@@ -25,10 +25,10 @@
 					"cmd":
 					[
 						"optirun",
-						"./$project_base_name"
+						"build/$project_base_name"
 					],
 					"name": "Run",
-					"working_dir": "$project_path/build"
+					"working_dir": "$project_path"
 				},
 				{
 					"cmd":
@@ -105,8 +105,8 @@
             "-Wno-unused-function",
 			"-ferror-limit=0"
 		],
-		"sublimegdb_commandline": "TRACE_FILE=simandconc.api.trace VOGL_CMD_LINE='--vogl_tracefile simandconc.vogltrace.bin --vogl_debug --vogl_pause' LD_PRELOAD=$(readlink -f /opt/vogl/libvogltrace64.so):/usr/lib/apitrace/wrappers/glxtrace.so optirun gdb --interpreter=mi ./simandconc",
-		"sublimegdb_workingdir": "${folder:${project_path:simandconc.sublime-project}}/build",
+		"sublimegdb_commandline": "TRACE_FILE=build/simandconc.api.trace VOGL_CMD_LINE='--vogl_tracefile build/simandconc.vogltrace.bin --vogl_debug --vogl_pause' LD_PRELOAD=$(readlink -f /opt/vogl/libvogltrace64.so):/usr/lib/apitrace/wrappers/glxtrace.so optirun gdb --interpreter=mi build/simandconc",
+		"sublimegdb_workingdir": "${folder:${project_path:simandconc.sublime-project}}",
 		"todoreview":
 		{
 			"exclude_files":

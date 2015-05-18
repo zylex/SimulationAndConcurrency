@@ -64,9 +64,6 @@ void BallSceneTweakBar::initialise()
   stringStream << this->getTweakBarName() << "/Main opened=true";
   TwDefine(stringStream.str().c_str());
   stringStream.str(std::string());
-  stringStream << this->getTweakBarName() << "/Visualization opened=true";
-  TwDefine(stringStream.str().c_str());
-  stringStream.str(std::string());
   stringStream << this->getTweakBarName() << "/Network opened=true";
   TwDefine(stringStream.str().c_str());
   stringStream.str(std::string());
