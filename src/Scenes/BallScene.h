@@ -12,6 +12,9 @@
 #include "MeshObject.h"
 #include "Light.h"
 
+#include "BallSceneBox.h"
+#include "BallSceneBowl.h"
+
 class BallScene : public zge::GameState
 {
 private:
@@ -21,6 +24,9 @@ private:
   zge::IGameObject* box;
 
   zge::Light light;
+
+  BallSceneBox* ballBox;
+  BallSceneBowl* bowl;
 
 #ifdef USE_ANT
   BallSceneTweakBar* bar;
