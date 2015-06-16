@@ -49,9 +49,9 @@ void BallSceneTweakBar::initialise()
   TwBar* antTweakBar = this->getAntTweakBar();
   TwAddSeparator(antTweakBar, nullptr, "");
   TwAddVarRO(antTweakBar, "nb_balls", TW_TYPE_UINT32, &this->numberOfBalls,
-             "group=BallScene label='Number Of Vertices'");
+             "group=BallScene label='Number Of Balls'");
   TwAddVarRO(antTweakBar, "nb_cubes", TW_TYPE_UINT32, &this->numberOfCubes,
-             "group=BallScene label='Number Of Triangles'");
+             "group=BallScene label='Number Of Cubes'");
 
   std::ostringstream stringStream;
   stringStream.str(std::string());

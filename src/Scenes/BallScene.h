@@ -49,7 +49,7 @@ public:
   void processEvent(const zge::Event);
 
   bool initialise();
-  void update();
+  void update(double deltaTime);
 };
 
 #endif

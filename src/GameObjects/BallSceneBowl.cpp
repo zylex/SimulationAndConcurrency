@@ -11,7 +11,7 @@ BallSceneBowl::BallSceneBowl()
   // constructor
   IResourceManager* resourceManager = IResourceManager::getInstance();
 
-  this->setMeshId(resourceManager->getBowlMesh(20.0f, 5.0f));
+  this->setMeshId(resourceManager->getSemiSphereMesh());
 
   Material* material = new Material;
 

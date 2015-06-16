@@ -257,11 +257,14 @@ bool BallScene::initialise()
 
   this->addGameObject(SHADER_TRANPARENT_TEXTURED, this->bowl);
 
+  // this->reset();;
+
   return true;
 }
 
-void BallScene::update()
+void BallScene::update(double deltaTime)
 {
+  GameState::update(deltaTime);
   // update
   // static float translation = 0.0f;
   // static glm::vec3 position = this->box->getPosition();
